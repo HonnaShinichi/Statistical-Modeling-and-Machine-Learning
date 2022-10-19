@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 trucks = pd.read_csv('C:/test.py/pyplot/BDS/examples/pickup.csv')
 
@@ -21,8 +22,6 @@ GMC_df = trucks[trucks["make"] == "GMC"]
 GMC_list = list(GMC_df["price"])
 
 #箱ひげ図
-
-#点数のタプル
 points = (Dodge_list, Ford_list, GMC_list)
 
 fig, ax = plt.subplots()
@@ -53,3 +52,13 @@ plt.scatter(Ford_df['year'],Ford_df['price'],color='r',label="Ford")
 plt.scatter(GMC_df['year'],GMC_df['price'],color='g',label='GMC')
 plt.legend()
 plt.savefig('scatterplot.png')
+
+#pointplot
+
+browser = pd.read_csv('C:/test.py/pyplot/BDS/examples/web-browsers.csv')
+plt.figure()
+
+sns.pointplot(data=browser, x='race', y='spend', hue='broadband', errorbar='ci', join=False, capsize=.4)
+plt.ylim(-500, 8500)
+
+plt.savefig('pointplot.png')
