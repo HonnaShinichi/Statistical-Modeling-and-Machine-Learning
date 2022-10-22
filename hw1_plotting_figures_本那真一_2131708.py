@@ -58,7 +58,7 @@ plt.savefig('scatterplot.png')
 browser = pd.read_csv('C:/test.py/pyplot/BDS/examples/web-browsers.csv')
 plt.figure()
 
-sns.pointplot(data=browser, x='race', y='spend', hue='broadband', errorbar='ci', join=False, capsize=.4)
+sns.pointplot(data=browser, x='race', y='spend', hue='broadband', errorbar='ci=99', join=False, capsize=.4)
 plt.ylim(-500, 8500)
 
-plt.savefig('pointplot.png')
+plt.savefig('bootstrapping.png')
